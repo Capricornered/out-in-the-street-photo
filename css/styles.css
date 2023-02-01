@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --offwhite: #faf7f2;
+    --offblack: #161412;
+    --orange: #b67b41;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "novecento-sans", sans-serif;
+    font-size: 16px;
+}
+
+#light {
+    background-color: var(--offwhite);
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    align-items: flex-end;
+    border-bottom: 3px solid var(--orange);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    padding: .75rem 2rem 1rem 2rem;
+}
+
+#logo img {
+    display: block;
+    height: 45px;
+}
+
+header ul li {
+    display: inline-block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 3rem;
+}
+
+header ul li a {
+    color: var(--offblack);
+    text-decoration: none;
+    transition: .3s;
+}
+
+header ul li a:hover {
+    color: var(--orange);
+}
+
+#hamburger {
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    margin-top: .25rem;
+}
+
+#main-menu {
+    display: none;
+}
+
+#hero {
+    background: #161412ac;
+    height: calc(100vh - 50px - 1.75rem);
+}
+
+#hero img {
+    height: calc(100vh - 50px - 1.75rem);
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    z-index: -5;
+}
+
+#hero .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px - 1.75rem);
+    justify-content: center;
+}
+
+#hero .content h1 {
+    color: var(--offwhite);
+    font-size: clamp(2rem, 10vw, 6rem);
+    font-weight: 100;
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+#hero .content .button {
+    background: var(--offblack);
+    border: 2px solid var(--offwhite);
+    color: var(--offwhite);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 1.3rem 4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    width: fit-content;
+}
+
+#hero .button:hover {
+    background-color: var(--offwhite);
+    color: var(--offblack);
+}
+
+#about {
+    padding: 1rem;
+}
+
+#about img {
+    display: none;
+}
+
+#about h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#about hr {
+    border: 1px solid var(--orange);
+}
+
+#about p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+    padding: 1rem .5rem 0 .5rem;
+}
+
+#contact-form {
+    background: var(--offblack);
+    color: var(--offwhite);
+}
+
+#contact-form .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 2rem;
+}
+
+#contact-form h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#contact-form p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 0 .5rem 0 .5rem;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 50rem;
+}
+
+input[type=text], input[type=email] {
+    background: var(--offwhite);
+    border: 2px solid var(--orange);
+    border-radius: 0;
+    box-sizing: border-box;
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    height: 2.75rem;
+    margin: 1.5rem auto;
+    padding: 5px;
+    width: 100%;
+}
+
+.name:nth-child(1) {
+    float: left;
+    width: 48% !important;
+}
+
+.name:nth-child(2) {
+    float: right;
+    width: 48% !important;
+}
+
+textarea {
+    background: var(--offwhite);
+    border: 2px solid var(--orange);
+    border-radius: 0;
+    box-sizing: border-box;
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    margin: 1.5rem auto;
+    padding: 5px;
+    width: 100%;
+}
+
+input[type=submit] {
+    background: var(--offblack);
+    border: 2px solid var(--offwhite);
+    border-radius: 0;
+    color: var(--offwhite);
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    margin: 1rem auto;
+    padding: 1rem 4rem;
+    transition: .3s;
+}
+
+footer {
+    padding: 2rem 1rem;
+}
+
+#footer-logo {
+    display: block;
+    margin: 0 auto;
+    width: 17rem;
+}
+
+footer hr {
+    border: 1px solid var(--orange);
+    margin: 1rem auto 2rem auto;
+}
+
+footer span {
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+input[type=submit]:hover {
+    background: var(--offwhite);
+    color: var(--offblack);
+    cursor: pointer;
+}
+
+
+/*SMALL MOBILE DEVICES*/
+
+@media (max-width: 340px) {
+    #logo {
+        align-self: center;
+    }
+
+    #logo img {
+        height: 35px;
+        margin-top: 3px;
+    }
+}
+
+/*TABLET*/
+
+@media (min-width: 767px) {
+    #hamburger {
+        display: none;
+    }
+
+    #main-menu {
+        display: block;
+    }
+
+    #about img {
+        display: block;
+        float: left;
+        margin-right: 2rem;
+        max-height: 35rem;
+        height: 60vw;
+    }
+
+    #about .content {
+        height: 60vw;
+        max-height: 35rem;
+        overflow: auto;
+        padding-right: .5rem;
+    }
+
+    #about h2 {
+        text-align: left;
+    }
+
+    #contact-form {
+        padding: 2rem;
+    }
+
+    input[type="submit"] {
+        float: right;
+    }
+}
+
+/*DESKTOP*/
+
+@media (min-width: 1024px) {
+    header  {
+        padding: .75rem 3rem 1rem 3rem;
+    }
+    
+    #hero .button {
+        font-size: 1.8rem;
+        padding: 1.3rem 5rem;
+    }
+
+    #about {
+        margin: 0 auto;
+        padding: 4rem;
+        max-width: 1200px;
+    }
+
+    #about img {
+        margin-right: 4rem;
+    }
+
+    #about h2 {
+        padding-bottom: 2rem;
+    }
+
+    #about p {
+        line-height: 3.2vw;
+        padding: 2rem .5rem 0 .5rem;
+    }
+
+    #contact-form .container {
+        flex-direction: row;
+        padding: 2rem;
+    }
+
+    #contact-form .content {
+        margin-right: 4rem;
+        width: 45%;
+    }
+
+    #contact-form h2 {
+        text-align: right;
+    }
+
+    #contact-form p {
+        line-height: 3vw;
+        text-align: right;
+    }
+
+    #contact-form form {
+        width: 55%;
+    }
+
+    input[type=submit] {
+        float: right;
+        width: 15rem;
+    }
+
+    #footer-logo {
+        width: 25rem;
+        margin-bottom: 1rem;
+    }
+}
