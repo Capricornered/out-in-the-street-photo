@@ -1,0 +1,911 @@
+/*
+Theme Name: Out in the Street Photography
+Author: Joelle Shapiro
+Description: Custom theme for the Out in the Street Photography portfolio site 
+Version: 0.0.1
+*/
+
+/*-----GENERAL-----*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --offwhite: #faf7f2;
+    --offblack: #161412;
+    --orange: #b67b41;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "novecento-sans", sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*light background for all parent pages*/
+
+#light {
+    background-color: var(--offwhite);
+}
+
+/*dark background for gallery pages*/
+
+#dark {
+    background-color: var(--offblack);
+}
+
+#dark p {
+    color: var(--offwhite);
+}
+
+#dark #logo, #dark #footer-logo, #dark #hamburger {
+    filter: invert(100%);
+}
+
+/*-----HEADER-----*/
+
+header {
+    align-items: flex-end;
+    border-bottom: 3px solid var(--orange);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    padding: .75rem 2rem 1rem 2rem;
+}
+
+#dark header {
+    border-bottom: 2px solid var(--offwhite);
+}
+
+header::after {
+    background: var(--offwhite);
+    border-bottom: 3px solid var(--orange);
+    content: '';
+    display: block;
+    height: calc(50px + 1.75rem);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#dark header::after {
+    background: var(--offblack);
+    border-bottom: 3px solid var(--offwhite);
+}
+
+header ul li {
+    border-bottom: 3px solid var(--orange);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#dark header ul li {
+    border-bottom: 3px solid var(--offwhite);
+}
+
+header ul li a {
+    color: var(--offblack);
+    display: block;
+    padding: 2rem 0;
+    text-decoration: none;
+    transition: .3s;
+    width: 100%;
+}
+
+#dark header ul li a {
+    color: var(--offwhite);
+}
+
+header ul li a:hover {
+    color: var(--orange);
+}
+
+#dark header ul li a:hover {
+    color: var(--orange);
+}
+
+#logo {
+    z-index: 3;
+}
+
+#logo img {
+    display: block;
+    height: 45px;
+    width: auto;
+}
+
+/*hamburger displays on mobile sizes only*/
+
+#hamburger {
+    align-self: center;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    margin-top: .25rem;
+    z-index: 3;
+}
+
+#main-menu {
+    background: var(--offwhite);
+    box-sizing: border-box;
+    display: block;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: -50%;
+    transition: .5s;
+    width: 100%;
+    z-index: 1;
+}
+
+#dark #main-menu {
+    background: var(--offblack);
+}
+
+/*JS class for slide-out menu*/
+
+.out {
+    top: calc(50px + 1.75rem) !important;
+}
+
+/*-----INDEX - HERO SECTION-----*/
+
+#hero {
+    background: #161412ac;
+    height: calc(100vh - 50px - 1.75rem);
+    z-index: -3 !important;
+}
+
+#hero img {
+    height: calc(100vh - 50px - 1.75rem);
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    z-index: -5;
+}
+
+#hero .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px - 1.75rem);
+    justify-content: center;
+}
+
+#hero .content h1 {
+    color: var(--offwhite);
+    font-size: clamp(2rem, 10vw, 6rem);
+    font-weight: 100;
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+#hero .content .button {
+    background: var(--offblack);
+    border: 2px solid var(--offwhite);
+    color: var(--offwhite);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 1.3rem 4rem;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    width: fit-content;
+}
+
+#hero .button:hover {
+    background-color: var(--offwhite);
+    color: var(--offblack);
+}
+
+/*-----INDEX - ABOUT SECTION-----*/
+
+#about {
+    padding: 1rem;
+}
+
+#about img {
+    display: none;
+}
+
+#about h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#about hr {
+    border: 1px solid var(--orange);
+}
+
+#about p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+    padding: 1rem .5rem 0 .5rem;
+}
+
+/*-----INDEX - CONTACT SECTION-----*/
+
+#contact-form {
+    background: var(--offblack);
+    color: var(--offwhite);
+}
+
+#contact-form .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 2rem;
+}
+
+#contact-form h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#contact-form p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 0 .5rem 0 .5rem;
+}
+
+/*styling for WPforms plugin used for contact form*/
+
+form {
+    margin: 0 auto !important;
+    max-width: 50rem !important;
+    width: 100% !important;
+}
+
+.wpforms-container-full {
+    padding: 1rem 0 0 0 !important;
+    margin: 0 !important;
+}
+
+.wpforms-form input[type=text], .wpforms-form input[type=email] {
+    background: var(--offwhite) !important;
+    border: 2px solid var(--orange) !important;
+    display: block !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: clamp(1rem, 2vw, 1.4rem) !important;
+    height: 2.75rem !important;
+    padding: 5px !important;
+    width: 100% !important;
+}
+
+.wpforms-form textarea {
+    background: var(--offwhite) !important;
+    border: 2px solid var(--orange) !important;
+    display: block !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: clamp(1rem, 2vw, 1.4rem) !important;
+    padding: 5px !important;
+    width: 100% !important;
+}
+
+.submit-button {
+    background: var(--offblack) !important;
+    border: 2px solid var(--offwhite) !important;
+    color: var(--offwhite) !important;
+    display: block !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: clamp(1.2rem, 2vw, 1.4rem) !important;
+    margin: 1rem auto !important;
+    padding: 1rem 4rem !important;
+    transition: .3s;
+}
+
+.submit-button:hover {
+    background: var(--offwhite) !important;
+    color: var(--offblack) !important;
+    cursor: pointer;
+}
+
+/*-----FOOTER-----*/
+
+footer {
+    clear: both;
+    padding: 2rem 1rem;
+}
+
+#footer-logo {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#footer-logo img {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    width: 13rem;
+}
+
+footer hr {
+    border: 1px solid var(--orange);
+    margin: 1rem auto 2rem auto;
+}
+
+footer p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+/*-----PARENT PAGES - BANNER SECTION-----*/
+
+#banner {
+    background: #161412d3;
+    height: 17rem;
+}
+
+#banner .container {
+    display: flex;
+    height: 17rem;
+}
+
+#banner img {
+    height: 17rem;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    z-index: -5;
+}
+
+#banner h2 {
+    align-self: center;
+    color: var(--offwhite);
+    font-size: clamp(2rem, 10vw, 4rem);
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+
+/*-----ABOUT PAGE-----*/
+
+#main-about {
+    padding: 1rem 2rem;
+}
+
+#main-about img {
+    display: none;
+}
+
+#main-about p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+}
+
+/*-----GALLERY PAGE-----*/
+
+#main-contact {
+    padding: 2rem 2rem 0 2rem;
+}
+
+#main-contact p {    
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: 1rem;
+}
+
+#main-contact .submit-button {
+    background: var(--offwhite) !important;
+    border: 2px solid var(--orange) !important;
+    color: var(--offblack) !important;
+}
+
+#main-contact .submit-button:hover {
+    background: var(--offblack) !important;
+    color: var(--offwhite) !important;
+}
+
+#main-gallery .wp-block-cover {
+    box-sizing: border-box;
+    height: 20rem;
+    margin: 20px auto;
+    max-width: 30rem;
+    min-height: 0;
+    width: 90%;
+}
+
+#main-gallery hr {
+    border: 1px solid var(--orange);
+    margin: 0 auto;
+    max-width: 30rem;
+    width: 90%;
+}
+
+#main-gallery p {
+    color: var(--offwhite);
+    font-family: "novecento-sans", sans-serif;
+    font-size: 2rem;
+}
+
+#main-gallery ul {
+    column-count: 1;
+    display: block;
+    list-style-type: none;
+    margin: 20px auto;
+    max-width: 30rem;
+    text-align: center;
+    width: 90%;
+}
+
+#main-gallery ul a {  
+    color: var(--offblack);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    transition: .3s;
+}
+
+#main-gallery ul a:hover {
+    color: var(--orange);
+}
+
+#main-gallery ul li {
+    padding: .5rem;
+}
+
+#main-gallery ul li:first-of-type {
+    font-weight: 600;
+}
+
+/*-----GALLERY CHILDREN PAGES-----*/
+
+h3 {
+    color: var(--offwhite);
+    font-size: clamp(2rem, 6vw, 4rem);
+    padding-top: 20px;
+    text-align: center;
+}
+
+h3 a {
+    color: var(--orange);
+    text-decoration: none;
+    transition: color .3s;
+}
+
+h3 a:hover {
+    color: var(--offwhite);
+}
+
+/*styling for NextGEN gallery plugin*/
+
+.ngg-galleryoverview {
+    box-sizing: border-box;
+    column-count: 1;
+    column-fill: balance;
+    column-gap: 30px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.ngg-galleryoverview img:first-of-type {
+    margin-top: -10px !important;
+}
+
+.ngg-gallery-thumbnail-box {
+    float: none !important;
+}
+
+.ngg-3-columns {
+    box-sizing: border-box;
+    display: block;
+    margin: 20px 0;
+    width: 100% !important;
+}
+
+.ngg-gallery-thumbnail-box.ngg-3-columns {
+    float: none !important;
+}
+
+.ngg-gallery-thumbnail a {
+    margin: 0 !important;
+}
+
+.ngg-gallery-thumbnail {
+    position: relative;
+}
+
+.ngg-gallery-thumbnail img {
+    transition: .3s;
+}
+
+.ngg-gallery-thumbnail img:hover {
+    opacity: .5 !important; 
+}
+
+.ngg-gallery-thumbnail a:before {
+    box-sizing: border-box;
+    content: attr(data-title);
+    color: white;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    font-size: 1rem;
+    opacity: 0;
+    padding: 20px;
+    pointer-events: none;
+    position: absolute;
+    transition: .3s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+.ngg-gallery-thumbnail a:hover:before {
+    opacity: 1;
+  }
+
+.sl-overlay {
+    background-color: #000;
+}
+
+.sl-wrapper .sl-close {
+    filter: invert(100%);
+}
+
+.sl-wrapper .sl-navigation button {
+    filter: invert(100%);
+}
+
+.sl-wrapper button {
+    border-color: var(--offwhite) !important;
+}
+
+
+/*SMALL MOBILE DEVICES*/
+
+@media (max-width: 340px) {
+
+    /*-----HEADER-----*/
+
+    #logo {
+        align-self: center;
+    }
+
+    #logo img {
+        height: 35px;
+        margin-top: 3px;
+    }
+}
+
+/*SMALL TABLET*/
+
+@media (min-width: 600px) {
+
+    /*-----GALLERY CHILDREN PAGES-----*/
+
+    /*change column count for photos in NextGEN gallery*/
+
+    .ngg-galleryoverview {
+        column-count: 2;
+    }
+}
+
+/*TABLET*/
+
+@media (min-width: 767px) {
+
+    /*-----HEADER-----*/
+
+    /*remove hamburger/display full menu*/
+    
+    #hamburger {
+        display: none;
+    }
+
+    header::after {
+        display: none;
+    }
+
+    header ul li, #dark header ul li {
+        border-bottom: none;
+        display: inline-block;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 3rem;
+    }
+    
+    header ul li a {
+        color: var(--offblack);
+        padding: 0;
+        text-decoration: none;
+        transition: .3s;
+        width: auto;
+    }
+    
+    header ul li a:hover {
+        color: var(--orange);
+    }
+    
+    #main-menu {
+        background: none;
+        display: block;
+        position: static;
+        width: fit-content;
+    }
+
+    /*-----INDEX - ABOUT SECTION-----*/
+
+    #about {
+        height: 60vw;
+        max-height: 35rem;
+        padding-top: 0;
+    }
+
+    #about img {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        margin-right: 2rem;
+        max-height: 35rem;
+        height: 60vw;
+        width: auto;
+    }
+
+    .image-left-with-text img {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        margin-right: 2rem;
+        max-height: 35rem;
+        height: 60vw;
+        width: auto;
+    }
+
+    .image-left-with-text .content {
+        box-sizing: border-box;
+        height: 60vw;
+        max-height: 35rem;
+        overflow: auto;
+        padding-right: .5rem;
+        position: relative;
+        top: 0;
+    }
+
+    #about .content {
+        box-sizing: border-box;
+        height: 60vw;
+        max-height: 35rem;
+        overflow: auto;
+        padding-right: .5rem;
+        position: relative;
+        top: 0;
+    }
+
+    #about h2 {
+        text-align: left;
+    }
+
+    /*-----INDEX - CONTACT SECTION-----*/
+
+    #contact-form {
+        padding: 2rem;
+    }
+
+    .submit-button {
+        float: right !important;
+    }
+
+    /*-----ABOUT PAGE-----*/
+
+    #main-about {
+        display: grid;
+        height: 35vw;
+        margin: 0 auto;
+        max-height: 30rem;
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    #main-about img {
+        box-sizing: border-box;
+        display: block;
+        grid-column: 1;
+        grid-row: 1;
+        float: left;
+        height: 35vw;
+        margin-right: 2rem;
+        max-height: 30rem;
+        object-fit: cover;
+        max-width: 25rem;
+        width: 30vw;
+    }
+
+    #main-about p {
+        box-sizing: border-box;
+        grid-column: 2;
+        grid-row: 1;
+        float: left;
+        height: 35vw;
+        max-height: 30rem;
+        overflow: auto;
+        width: auto;
+    }
+
+    /*-----GALLERY PAGE-----*/
+
+    #main-gallery {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 750px;
+        width: fit-content;
+    }
+
+    #main-gallery .wp-block-cover {
+        box-sizing: border-box;
+        float: left;
+        height: 20rem;
+        margin: 20px;
+        max-width: 30rem;
+        min-height: 0;
+        width: 50vw;
+    }
+    
+    #main-gallery hr {
+        border: none;
+        border-left: 2px solid var(--orange);
+        display: inline;
+        float: left;
+        height: 20rem;
+        margin-top: 20px;
+        padding-right: 10px;
+        width: 1px;
+    }
+    
+    #main-gallery ul {
+        column-count: 2;
+        column-fill: auto;
+        display: inline;
+        float: left;
+        margin: 20px auto;
+        max-height: 20rem;
+        max-width: 30rem;
+        text-align: left;
+        width: 40vw;
+    }
+    
+    #main-gallery ul a {  
+        color: var(--offblack);
+        font-size: 1.2rem;
+        text-decoration: none !important;
+        transition: .3s;
+    }
+}
+
+/*DESKTOP*/
+
+@media (min-width: 1024px) {
+
+    /*-----HEADER-----*/
+
+    header  {
+        padding: .75rem 3rem 1rem 3rem;
+    }
+
+    /*-----INDEX - HERO SECTION-----*/
+    
+    #hero .button {
+        font-size: 1.8rem;
+        padding: 1.3rem 5rem;
+    }
+
+    /*-----INDEX - ABOUT SECTION-----*/
+
+    #about {
+        margin: 0 auto;
+        padding: 4rem;
+        max-width: 1200px;
+    }
+
+    #about img {
+        margin-right: 4rem;
+    }
+
+    #about h2 {
+        padding-bottom: 2rem;
+    }
+
+    #about p {
+        line-height: 3.2vw;
+        padding: 2rem .5rem 0 .5rem;
+    }
+
+    /*-----INDEX - CONTACT SECTION-----*/
+
+    #contact-form .container {
+        flex-direction: row;
+        padding: 2rem;
+    }
+
+    #contact-form .content {
+        margin-right: 4rem;
+        width: 45%;
+    }
+
+    #contact-form h2 {
+        float: right;
+        text-align: right;
+        max-width: 23rem;
+    }
+
+    #contact-form p {
+        clear: both;
+        line-height: 3vw;
+        text-align: right;
+    }
+
+    #contact-form form {
+        width: 55%;
+    }
+
+    .submit-button {
+        width: 15rem !important;
+    }
+
+    /*-----FOOTER-----*/
+
+    #footer-logo img {
+        width: 25rem;
+        margin-bottom: 1rem;
+    }
+
+    /*-----ABOUT PAGE-----*/
+
+    #main-about {
+        padding: 4rem;
+    }
+
+    #mainabout img {
+        margin-right: 4rem;
+    }
+
+    #main-about p {
+        line-height: 3.2vw;
+    }
+
+    /*-----CONTACT PAGE-----*/
+
+    #main-contact p {
+        line-height: 3.2vw;
+    }
+
+    /*-----GALLERY CHILDREN PAGES-----*/
+
+    /*increase column count in NextGEN gallery*/
+
+    .ngg-galleryoverview {
+        column-count: 3;
+    }
+}
